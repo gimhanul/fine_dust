@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>fineDust</title>
+</head>
+<body>
+    <p>우리학교 미세먼지 프로젝트</p>
+    <a id="login" href="{{ url_for('login') }}">로그인</a>
+    <a id="join" href="{{ url_for('join') }}">회원가입</a>
+</body>
+</html>

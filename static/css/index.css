@@ -1,0 +1,57 @@
+p {
+    position: absolute;
+    width: 323.79px;
+    height: 34.43px;
+    left: 32px;
+    top: 39px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 41px;
+    
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+#join {
+    position: absolute;
+    width: 150.86px;
+    height: 34.43px;
+    left: 299px;
+    top: 180.04px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 41px;
+    text-align: center;
+
+    color: #EF880F;
+
+    transform: rotate(-15deg);
+}
+
+#login {
+    position: absolute;
+    width: 120.32px;
+    height: 34.43px;
+    left: 174px;
+    top: 218.14px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 41px;
+    text-align: center;
+
+    color: #D688C0;
+
+    transform: rotate(-15deg);
+}
