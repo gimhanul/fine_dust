@@ -1,4 +1,6 @@
 # fine_dust
+
+
 ## Member 
 
 <table align="center">
@@ -19,8 +21,8 @@
             </a>
         </td>
         <td align="center">
-            <a href="https://github.com/rlatpwls">
-                <img alt="김세진" src="https://avatars.githubusercontent.com/dlatldhs" width="100" />
+            <a href="https://github.com/ksj051203">
+                <img alt="김세진" src="https://avatars.githubusercontent.com/ksj051203" width="100" />
             </a>
         </td>
     </tr>
