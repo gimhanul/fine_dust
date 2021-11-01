@@ -3,7 +3,7 @@ import time
 
 class Database:
     def __init__(self):
-        self.db = pymysql.connect(host='localhost', user = 'ubuntu', password = 'dlatldhs',db = 'test')
+        self.db = pymysql.connect(host='localhost', user = 'ubuntu', password = 'qlqjs',db = 'test')
         self.cur = self.db.cursor()
         print("nice!")
 
