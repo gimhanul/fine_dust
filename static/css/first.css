@@ -1,0 +1,28 @@
+body{
+    font-size : 2.3em;
+}
+h1{
+    margin-left : 100px;
+}
+
+
+button{
+    -ms-transform: rotate(-10deg); /* IE 9 */
+    -webkit-transform: rotate(-10deg); /* Chrome, Safari, Opera */
+    transform: rotate(-10deg);
+    padding: 0;
+    border: none;
+    background: none;
+    margin-left : 230px;
+}
+
+.Log_btn{
+    margin-top : 130px;
+    color : #D688C0;
+    font-size : 1.5em;
+}
+
+.Sign_btn{
+    color : #EF880F;
+    font-size: 1.5em;
+}
