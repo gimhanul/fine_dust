@@ -15,13 +15,13 @@ class User(db.Model):
     __tablename__ = 'login_user'
     __table_args__ = {'mysql_collate': 'utf8_general_ci'}    #한글인식
 
-    userid = db.Column(db.String(30), primary_key=True)
+    email = db.Column(db.String(30), primary_key=True)
     name = db.Column(db.String(30))
-    password = db.Column(db.String(100))
+    password = db.Column(db.String(20))
     created = db.Column(db.DateTime)
 
-    def __init__(self, userid, name, password):
-        self.userid = userid
+    def __init__(self, email, name, password):
+        self.userid = email
         self.name = name
         self.password = password
         self.created = datetime.now()
