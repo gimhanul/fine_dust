@@ -43,32 +43,38 @@ def index():
 
 @app.route("/login", methods=['POST', 'GET'])
 def userLogin():
-    email = request.form['email']
-    password = request.form['password']
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
 
-    
+    return render_template('login.html')
+
+
 
 @app.route("/join", methods=['POST', 'GET'])
 def joinPost():
-    email = request.form['email']
-    name = request.form['name']
-    password = request.form['password1']
-    retryPassword = request.form['password2']
+    if request.method == 'POST':
+        email = request.form['email']
+        name = request.form['name']
+        password = request.form['password1']
+        retryPassword = request.form['password2']
     
-    if password != retryPassword:
-        return "비밀번호가 맞지 않습니다."
+        if password != retryPassword:
+            return "비밀번호가 맞지 않습니다."
 
-    for email in User.query.filter_by(email=email).all():
-        if email == email.getEmail():
-            return "이미 가입된 ID입니다."
+        for email in User.query.filter_by(email=email).all():
+            if email == email.getEmail():
+                return "이미 가입된 ID입니다."
 
-    user = User(email, name, password)
-    db.session.add(user)
-    try:
-        db.session.commit()
-        return redirect(url_for('login'))
-    except:
-        return "no commit"
+        user = User(email, name, password)
+        db.session.add(user)
+        try:
+            db.session.commit()
+            return redirect(url_for('login'))
+        except:
+            return "no commit"
+
+    return render_template('join.html')
 
 
 if __name__=="__main__":
