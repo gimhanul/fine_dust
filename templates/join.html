@@ -10,9 +10,9 @@
 	<form action="" method="POST">
         <div class = "container">
             <div class = "signup">
-                <input type ="text" placeholder=" 부산쏘마고 이메일"></input><br>
-                <input type = "password" placeholder=" 비밀번호"></input><br>
-                <input type = "password" placeholder=" 비밀번호 확인" ></input<br>
+                <input name="email" type ="text" placeholder=" 부산쏘마고 이메일"></input><br>
+                <input name="password1" type = "password" placeholder=" 비밀번호"></input><br>
+                <input name="password2" type = "password" placeholder=" 비밀번호 확인" ></input<br>
             </div>
             <br>
             <div class = "submit">
@@ -21,7 +21,7 @@
                 </button>
             </div>
             <p align = "right" style = "margin-right : 550px; margin-top : -135px;">
-                <input class = "name" type = "text" placeholder = " 이름"></input><br>
+                <input name="name" class = "name" type = "text" placeholder = " 이름"></input><br>
                 <img src = "{{url_for('static', filename='image/signup.png')}}">
             </p>
     </form>

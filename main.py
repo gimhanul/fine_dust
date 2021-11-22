@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+
+from werkzeug.utils import redirect
 
 app = Flask(__name__)
 
@@ -21,44 +23,50 @@ class User(db.Model):
     created = db.Column(db.DateTime)
 
     def __init__(self, email, name, password):
-        self.userid = email
+        self.email = email
         self.name = name
         self.password = password
         self.created = datetime.now()
 
     #객체 출력했을 때 나오는 출력화면
     def __repr__(self):
-        return 'userid : %s, name : %s, password : %s' % (self.userid, self.name, self.password)
+        return 'email : %s, name : %s, password : %s' % (self.email, self.name, self.password)
 
-    def getUserID(self):
-        return str(self.userid)
+    def getEmail(self):
+        return str(self.email)
 
 #db.create_all()
 
 @app.route("/")
-def login():
-    return render_template('login.html')
+def index():
+    return render_template('index.html')
 
-@app.route("/join", methods=['POST'])
+@app.route("/login", methods=['POST', 'GET'])
+def userLogin():
+    email = request.form['email']
+    password = request.form['password']
+
+    
+
+@app.route("/join", methods=['POST', 'GET'])
 def joinPost():
-    userID = request.form['inputID']
-    name = request.form['inputName']
-    password = request.form['inputPW']
-    retryPassword = request.form['inputREPW']
+    email = request.form['email']
+    name = request.form['name']
+    password = request.form['password1']
+    retryPassword = request.form['password2']
     
     if password != retryPassword:
         return "비밀번호가 맞지 않습니다."
 
-    for userid in User.query.filter_by(userid=userID).all():
-        if userID == userid.getUserID():
+    for email in User.query.filter_by(email=email).all():
+        if email == email.getEmail():
             return "이미 가입된 ID입니다."
 
-    user = User(userID, name, password)
-    db.create_all()
+    user = User(email, name, password)
     db.session.add(user)
     try:
         db.session.commit()
-        return "{}님 안녕하세요?".format(user.name)
+        return redirect(url_for('login'))
     except:
         return "no commit"
 
