@@ -6,13 +6,13 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     </head>
     <body>
-        <h1>로그인</h1>
-	<form action="" method="POST">
         <div class = "container">
+        <h1>로그인</h1>
+	<form action="/post" method="post">
             <div class = "login">
-                <input name="email" type ="text" placeholder=" 부산쏘마고 이메일"></input>
+                <input type ="text" placeholder=" 부산쏘마고 이메일"></input>
                 <br>
-                <input name="password" type = "password" placeholder=" 비밀번호" style = "margin-top : 10px;"></input>
+                <input type = "password" placeholder=" 비밀번호" style = "margin-top : 10px;"></input>
             </div>
             <br>
             <div class = "submit">
@@ -25,5 +25,6 @@
             <img src = "{{url_for('static', filename='image/login.png')}}">
         </p>
     </form>
+</div>
     </body>
 </html>
