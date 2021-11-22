@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<!-- saved from url=(0092)file:///C:/Users/SW2120/OneDrive/%EB%AC%B8%EC%84%9C/%EC%B9%B4%EC%B9%B4%EC%98%A4~1/GOOD~1.HTM -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>좋음</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/good.css') }}">
-    
     <title>Document</title>
-    </head><body><img class="good" src="{{url_for('static', filename='image/good.png')}}">
+    <!--자바스크립트-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/temp.js') }}"></script>
+    
+</head>
+<body>
+    
+    <img class="good" src="{{url_for('static', filename='image/good.png')}}">
     <p class="first">1학년 2반의</p>
     <p class="second">미세먼지 농도</p>
     <br>
     <p class="dust">14.5</p>
     <p class="last">창문열고 맑은공기 쓰읍</p>
 
-
-
-    
-
-</body></html>
+</body>
+</html>
