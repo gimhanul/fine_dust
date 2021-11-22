@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>로그인</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    </head>
+    <body>
+        <div class = "container">
+        <h1>로그인</h1>
+	<form action="/post" method="post">
+            <div class = "login">
+                <input type ="text" placeholder=" 부산쏘마고 이메일"></input>
+                <br>
+                <input type = "password" placeholder=" 비밀번호" style = "margin-top : 10px;"></input>
+            </div>
+            <br>
+            <div class = "submit">
+                <button type="button" id="">
+                    <img src= "{{url_for('static', filename='image/btn_1.png')}}"salt="btnImages" class="btnImages">
+                </button>
+            </div>
+        </div>
+        <p align = "right" style = "margin-right : 580px;">
+            <img src = "{{url_for('static', filename='image/login.png')}}">
+        </p>
+    </form>
+</div>
+    </body>
+</html>
