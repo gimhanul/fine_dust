@@ -1,9 +1,25 @@
 import pymysql
 import time
+import os
+from pathlib import Path
+import json
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
+
+with open(secret_file) as f:
+    secrets = json.loads(f.read())
+
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets[setting]
+    except KeyError:
+        error_msg = "Set the {} environment variable".format(setting)
+        return #raise ~~
 
 class Database:
     def __init__(self):
-        self.db = pymysql.connect(host='localhost', user = 'ubuntu', password = 'qlqjs',db = 'test')
+        self.db = pymysql.connect(host=get_secret("DB_HOST"), user = get_secret("DB_USER"), password = get_secret("DB_PW"),db = get_secret("DB_NAME"))
         self.cur = self.db.cursor()
         print("nice!")
 
