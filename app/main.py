@@ -3,29 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from werkzeug.utils import redirect
 import os
-from pathlib import Path
 import json
 
-BASE_DIR = Path(__file__).resolve().parent
-secret_file = os.path.join(BASE_DIR, 'secrets.json')
 
-with open(secret_file) as f:
-    secrets = json.loads(f.read())
-
-def get_secret(setting, secrets=secrets):
-    try:
-        return secrets[setting]
-    except KeyError:
-        error_msg = "Set the {} environment variable".format(setting)
-        return #raise ~~
 
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+get_secret("DB_USER")+':'+get_secret("DB_PW")+'@'+get_secret("DB_HOST")+'/'+get_secret("DB_NAME")+'?charset=utf8'
-app.config['SQLALCHEMY_ECHO'] = True #로그를 위한 플래그
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #수정사항 추적, 로그사용으로 불필요
-app.config['SECRET_KEY'] = 'this is secret'
+
 
 db = SQLAlchemy(app)
 
@@ -51,7 +36,7 @@ class User(db.Model):
     def getEmail(self):
         return str(self.email)
 
-db.create_all()
+#db.create_all()
 
 @app.route("/")
 def index():
