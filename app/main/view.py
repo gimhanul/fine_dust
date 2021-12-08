@@ -45,7 +45,6 @@ def login():
             return '존재하지 않는 사용자입니다.'
 
         if user.password == password:
-            print('good')
             session['email'] = email
             #return redirect(url_for('main.main'))
 

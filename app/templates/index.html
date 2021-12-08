@@ -5,11 +5,11 @@
         <title>우리 학교 미세먼지</title>
         <meta charset="UTF-8">
         <title>login</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/first.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     </head>
     <body>
         <h1>우리학교<br>미세먼지 프로젝트 </h1>
-        <button class = "Log_btn"><a href = "{{ url_for('main.login') }}"></a>로그인</button>
-        <button class = "Sign_btn"><a href = "{{ url_for('main.joinPost') }}"></a>회원가입</button>
+        <a id = "login" href = "{{ url_for('main.login') }}">로그인</a>
+        <a id = "join" href = "{{ url_for('main.joinPost') }}">회원가입</a>
     </body>
 </html>
