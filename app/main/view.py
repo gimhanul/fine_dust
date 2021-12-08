@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, url_for, Blueprint
+from flask import Flask, redirect, render_template, request, url_for, Blueprint, session
 from app import db
 from .model import User
 main = Blueprint('main', __name__, url_prefix='/')
@@ -6,15 +6,6 @@ main = Blueprint('main', __name__, url_prefix='/')
 @main.route('/')
 def index():
     return render_template('index.html')
-
-@main.route('/login', methods=['POST', 'GET'])
-def login():
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
-
-    return render_template('login.html')
-
 
 
 @main.route('/join', methods=['POST', 'GET'])
@@ -41,3 +32,34 @@ def joinPost():
             return 'no commit'
 
     return render_template('join.html')
+
+
+@main.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        user = User.query.filter_by(email=email).first()
+        if not user:
+            return '존재하지 않는 사용자입니다.'
+
+        if user.password == password:
+            print('good')
+            session['email'] = email
+            #return redirect(url_for('main.main'))
+
+    return render_template('login.html')
+
+
+@main.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('main.index'))
+
+'''
+@main.route('/main')
+def main():
+    return
+
+'''

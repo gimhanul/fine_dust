@@ -8,16 +8,16 @@
     <body>
         <div class = "container">
         <h1>로그인</h1>
-	<form action="/post" method="post">
+	<form action="" method="post">
             <div class = "login">
-                <input type ="text" placeholder=" 부산쏘마고 이메일"></input>
+                <input name="email" type ="text" placeholder=" 부산쏘마고 이메일"></input>
                 <br>
-                <input type = "password" placeholder=" 비밀번호" style = "margin-top : 10px;"></input>
+                <input name="password" type = "password" placeholder=" 비밀번호" style = "margin-top : 10px;"></input>
             </div>
             <br>
             <div class = "submit">
-                <button type="button" id="">
-                    <img src= "{{url_for('static', filename='image/btn_1.png')}}"salt="btnImages" class="btnImages">
+                <button type="submit" id="">
+                    <img src="{{url_for('static', filename='image/btn_1.png')}}"salt="btnImages" class="btnImages">
                 </button>
             </div>
         </div>
