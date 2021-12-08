@@ -28,15 +28,15 @@ def joinPost():
         if password != retryPassword:
             return '비밀번호가 맞지 않습니다.'
 
-        for email in User.query.filter_by(email=email).all():
-            if email == email.getEmail():
-                return '이미 가입된 ID입니다.'
+        #bssm.hs.kr
+        if email[-10:] != 'bssm.hs.kr':
+            return '부산쏘마고 이메일을 사용해 주세요.'
 
         user = User(email, name, password)
         db.session.add(user)
         try:
             db.session.commit()
-            return redirect(url_for('login'))
+            return redirect(url_for('main.login'))
         except:
             return 'no commit'
 
