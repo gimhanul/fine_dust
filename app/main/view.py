@@ -1,12 +1,14 @@
 from flask import Flask, redirect, render_template, request, url_for, Blueprint, session
 from app import db
-from .model import User
+from main.domain.user import User
+
 main = Blueprint('main', __name__, url_prefix='/')
 
+
+#user 관리
 @main.route('/')
 def index():
     return render_template('index.html')
-
 
 @main.route('/join', methods=['POST', 'GET'])
 def joinPost():
@@ -50,15 +52,26 @@ def login():
 
     return render_template('login.html')
 
-
 @main.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('main.index'))
 
-'''
-@main.route('/main')
-def main():
+
+#measure fineDust
+@main.route('/measure')
+def measure():
     return
 
+'''
+6일데이터 1일별평균내서 보내고
+센서값은 저장할 때 
+{
+날짜
+시각
+미세먼지
+}
+
+jsㅇㅔ 보낼때는 미세먼지만있으면대는데
+숫자만 보내기
 '''
