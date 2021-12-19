@@ -10,7 +10,7 @@ class FineDust(db.Model):
 
     def __init__(self, munge):
         self.munge = munge
-        self.created = datetime.now()
+        self.datetime = datetime.now()
 
     #객체 출력했을 때 나오는 출력화면
     def __repr__(self):
