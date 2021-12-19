@@ -1,9 +1,15 @@
 import os
 import fcntl
 import time
-from app import db
-from app.main.domain.fineDust import FineDust
+#from app import db
+#from domain import fineDust
 
+while True:
+    data = 1
+    print(data)
+    time.sleep(2)
+
+'''
 I2C_SLAVE = 0x703
 PM2008 = 0x28
 
@@ -24,4 +30,4 @@ try:
         print("-------------------------------------------------------------------------------------------------------------")
         time.sleep(2)
 except KeyboardInterrupt:
-    os.close(fd)
+    os.close(fd)'''

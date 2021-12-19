@@ -1,8 +1,34 @@
+import os
+import fcntl
 from flask import Flask, redirect, render_template, request, url_for, Blueprint, session
 from app import db
-from main.domain.user import User
+from .domain.user import User
+from .domain.fineDust import FineDust
+from apscheduler.schedulers.background import BackgroundScheduler
 
 main = Blueprint('main', __name__, url_prefix='/')
+
+#미세먼지 값 받기
+I2C_SLAVE = 0x703
+PM2008 = 0x28
+
+fd = os.open('/dev/i2c-1',os.O_RDWR)
+if fd < 0 :
+    print("Failed to open the i2c bus\n")
+io = fcntl.ioctl(fd,I2C_SLAVE,PM2008)
+if io < 0 :
+    print("Failed to acquire bus access/or talk to salve\n")
+
+def getFineDust():
+    data = os.read(fd,32)
+    now = FineDust(256*int(data[11])+int(data[12]))
+    db.session.add(now)
+    db.session.commit()
+    print(now)
+
+sched = BackgroundScheduler(daemon=True)
+sched.add_job(getFineDust,trigger='interval',minutes=1)
+sched.start()
 
 
 #user 관리
