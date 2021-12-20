@@ -23,7 +23,6 @@ def getFineDust():
     data = os.read(fd,32)
     now = FineDust(256*int(data[11])+int(data[12]))
     db.session.add(now)
-    db.session.commit()
     print(now)
 
 sched = BackgroundScheduler(daemon=True)
