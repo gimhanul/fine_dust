@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/good.css') }}">
     <title>Document</title>
-    <!--자바스크립트-->
+    <!--자바스크립트
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/temp.js') }}"></script>
-    
+    -->    
 </head>
 <body>
     
@@ -17,7 +17,7 @@
     <p class="first">1학년 2반의</p>
     <p class="second">미세먼지 농도</p>
     <br>
-    <p class="dust">14.5</p>
+    <p class="dust">{{ munge.munge }}</p>
     <p class="last">창문열고 맑은공기 쓰읍</p>
 
 </body>

@@ -23,7 +23,7 @@ def getFineDust():
     data = os.read(fd,32)
     now = FineDust(256*int(data[11])+int(data[12]))
     db.session.add(now)
-    print(now)
+    db.session.commit()
 
 sched = BackgroundScheduler(daemon=True)
 sched.add_job(getFineDust,trigger='interval',minutes=1)
@@ -42,7 +42,7 @@ def joinPost():
         name = request.form['name']
         password = request.form['password1']
         retryPassword = request.form['password2']
-    
+   
         if password != retryPassword:
             return '비밀번호가 맞지 않습니다.'
 
@@ -86,7 +86,8 @@ def logout():
 #measure fineDust
 @main.route('/measure')
 def measure():
-    return
+    latest = FineDust.query.all()
+    return render_template('good.html', munge=latest[-1])
 
 '''
 6일데이터 1일별평균내서 보내고
