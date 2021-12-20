@@ -1,3 +1,6 @@
+// 들어오는 값
+var valuelist = [];
+
 var currentdate = new Date();
 console.log(currentdate);
 var mm = String(currentdate.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -33,7 +36,7 @@ var myChart = new Chart(ctx, {
         labels: [datelist[5], datelist[4], datelist[3], datelist[2], datelist[1], datelist[0]],
         datasets: [{
             label: '# 미세먼지 그래프',
-            data: [12, 19, 3, 5, 2, 3],
+            data: valuelist,
             backgroundColor: [
                 // 'rgba(255, 99, 132, 0.2)',
                 // 'rgba(54, 162, 235, 0.2)', 
@@ -64,3 +67,19 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+$(document).ready(function(){
+    $.ajax({
+        url: '/chart',
+        type: 'GET',
+        dataType: 'json',
+        // data로 농도를 받음
+        success: function (data) {
+            
+            //code
+        },
+        error: function (request, status, error) {
+            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+        },
+    })
+})
