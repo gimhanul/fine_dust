@@ -67,7 +67,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-
+/*
 $(document).ready(function(){
     $.ajax({
         url: '/chart',
@@ -83,3 +83,4 @@ $(document).ready(function(){
         },
     })
 })
+*/

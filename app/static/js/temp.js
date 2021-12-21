@@ -63,43 +63,43 @@ $(document).ready(function () {
 const changeURL = (state, data) => {
     //good
     if (state == 1) {
-        $("title").html("good")
+        //$("title").html("good")
         $("#dust").html(data)
     }
     //normal
     else if (state == 2) {
-        $("title").html("normal")
+        //$("title").html("normal")
         $("body").css("background-color", "rgba(108,184,107, 0.3)")
         $("#dust").html(data)
-        $(".good").css("background-image", "src({{url_for('static', filename='image/normal.png')}})")
-        $(".good").attr({ "src": "{{url_for('static', filename='image/normal.png')}}", "class": "good" })
+        $(".good").css("background-image", "src('../static/image/normal.png')")
+        $(".good").attr({ "src": "../static/image/normal.png", "class": "good" })
         $("p").css({ "color": "#6CB86B" })
         $("p#dust").css({ "background-color": "rgba(255,255,255,0.4)" })
         $(".last").html("애매하네....")
     }
     //bad
     else if (state == 3) {
-        $("title").html("bad")
+        //$("title").html("bad")
         $("body").css("background-color", "rgba(234,215,46,0.3)")
         $("#dust").html(data)
-        $(".good").attr({ "src": "{{url_for('static', filename='image/bad.png')}}", "class": "good" })
+        $(".good").attr({ "src": "../static/image/bad.png", "class": "good" })
         $("p").css({ "color": "#D0BC0A" })
         $("p#dust").css({ "background-color": "rgba(255,255,255,0.4)" })
         $(".last").html("마스크 여매고 댕겨라,,,끌끌,,,")
     }
     //sobad
     else if (state == 4) {
-        $("title").html("sobad")
+        //$("title").html("sobad")
         $("body").css("background-color", "rgba(184,107,107,0.5)")
         $("#dust").html(data)
-        $(".good").attr({ "src": "{{url_for('static', filename='image/sobad.png')}}", "class": "good" })
+        $(".good").attr({ "src": "../static/image/sobad.png", "class": "good" })
         $("p").css({ "color": "#B86B6B" })
         $("p#dust").css({ "background-color": "rgba(255,255,255,0.4)" })
         $(".last").html("당장 공기청정기 켜!!...")
     }
     //ajax 값이 들어오지 않고 0일때 
     else {
-        $("title").html("error")
+        //$("title").html("error")
         $(".first").html("ERROR")
         $("body").css({
             "background-color": "rgba(255,0, 0, 0.5)",
