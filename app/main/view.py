@@ -73,7 +73,7 @@ def login():
 
         if user.password == password:
             session['email'] = email
-            #return redirect(url_for('main.main'))
+            return redirect(url_for('main.measure'))
 
     return render_template('login.html')
 
@@ -87,24 +87,12 @@ def logout():
 @main.route('/measure')
 def measure():
     latest = FineDust.query.all()
-    return render_template('good.html', munge=latest[-1])
+    return render_template('measure.html', munge=latest[-1])
 
 
 @main.route('/chart')
 def chart():
     data = FineDust.query.all()
     data = data[-6:]
+    #TODO data 날짜별로 수정
     return render_template('chart.html', data=data)
-
-'''
-6일데이터 1일별평균내서 보내고
-센서값은 저장할 때 
-{
-날짜
-시각
-미세먼지
-}
-
-jsㅇㅔ 보낼때는 미세먼지만있으면대는데
-숫자만 보내기
-'''

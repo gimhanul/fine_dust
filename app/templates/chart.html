@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <img class="good" src="{{ url_for('static', filename='image/chart.png') }}">
+    <a href="{{ url_for('main.measure') }}"><img class="good" src="{{ url_for('static', filename='image/chart.png') }}"></a>
     
     <p class="last">어제그제그저께........</p>
     <div id="graph">
@@ -20,8 +20,6 @@
 </body>
 <script>
 	var valuelist = {{ data|safe }};
-	console.log(valuelist);
 </script>
 <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
-
 </html>
