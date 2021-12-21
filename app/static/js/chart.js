@@ -1,5 +1,5 @@
 // 들어오는 값
-var valuelist = [];
+//var valuelist = [];
 
 var currentdate = new Date();
 console.log(currentdate);

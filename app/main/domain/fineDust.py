@@ -13,4 +13,4 @@ class FineDust(db.Model):
 
     #객체 출력했을 때 나오는 출력화면
     def __repr__(self):
-        return 'munge: %d' % (self.munge)
+        return str(self.munge)

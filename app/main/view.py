@@ -89,6 +89,13 @@ def measure():
     latest = FineDust.query.all()
     return render_template('good.html', munge=latest[-1])
 
+
+@main.route('/chart')
+def chart():
+    data = FineDust.query.all()
+    data = data[-6:]
+    return render_template('chart.html', data=data)
+
 '''
 6일데이터 1일별평균내서 보내고
 센서값은 저장할 때 
