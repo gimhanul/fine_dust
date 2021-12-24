@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>로그인</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-    </head>
-    <body>
-        <div class = "container">
-        <h1>로그인</h1>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빠인더스트</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class = "container">
+    <h1>로그인</h1>
 	<form action="" method="post">
             <div class = "login">
                 <input name="email" type ="text" placeholder=" 부산쏘마고 이메일"></input>
@@ -27,6 +27,6 @@
             <img src = "{{url_for('static', filename='image/login.png')}}">
         </p>
     </form>
-</div>
-    </body>
+    </div>
+</body>
 </html>

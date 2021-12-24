@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>회원가입</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
-    </head>
-    <body>
-            <h1>회원가입</h1>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빠인더스트</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/join.css') }}">
+</head>
+<body>
+    <h1>회원가입</h1>
 	<form action="/join" method="POST">
         <div class = "container">
             <div class = "signup">
@@ -24,8 +24,8 @@
             </div>
             <p align = "right" style = "margin-right : 550px; margin-top : -135px;">
                 <input name="name" class = "name" type = "text" placeholder = " 이름"></input><br>
-                <img src = "{{url_for('static', filename='image/signup.png')}}">
+                <img src = "{{url_for('static', filename='image/join.png')}}">
             </p>
     </form>
-    </body>
+</body>
 </html>
