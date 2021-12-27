@@ -54,6 +54,7 @@ def login():
 
         if user.password == password:
             session['email'] = email
+            session['name'] = user.name
             return redirect(url_for('main.measure'))
 
     return render_template('login.html')
@@ -68,7 +69,10 @@ def logout():
 @main.route('/measure')
 def measure():
     latest = fineDustService.getLatestFineDust()
-    return render_template('measure.html', munge=latest)
+    grade = session['email'][4]
+    ban = session['eamil'][6]
+    name = session['name']
+    return render_template('measure.html', munge=latest,name=name,grade=grade,ban=ban)
 
 
 @main.route('/chart')

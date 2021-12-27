@@ -38,3 +38,8 @@ p.last{
     margin-left: 11.5em;
     margin-top: 0px;
 }
+#name {
+    position: absolute;
+    right: 2%;
+    top: 5%;
+}

@@ -10,9 +10,9 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/measure.js') }}"></script>
 </head>
 <body>
-    
+    <span id="name">{{ name }}</span>
     <a href="{{ url_for('main.chart') }}"><img class="good" src="{{ url_for('static', filename='image/good.png') }}"></a>
-    <p class="first">1학년 2반의</p>
+    <p class="first">{{ grade }}학년 {{ ban }}반의</p>
     <p class="second">미세먼지 농도</p>
     <br>
     <p id="dust">{{ munge.munge }}</p>
