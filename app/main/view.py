@@ -70,7 +70,7 @@ def logout():
 def measure():
     latest = fineDustService.getLatestFineDust()
     grade = session['email'][4]
-    ban = session['eamil'][6]
+    ban = session['email'][6]
     name = session['name']
     return render_template('measure.html', munge=latest,name=name,grade=grade,ban=ban)
 
