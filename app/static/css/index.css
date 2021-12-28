@@ -1,57 +1,24 @@
-p {
-    position: absolute;
-    width: 323.79px;
-    height: 34.43px;
-    left: 32px;
-    top: 39px;
-    
-    font-family: Roboto;
-    font-style: normal;
+h1 {
     font-weight: bold;
-    font-size: 35px;
-    line-height: 41px;
-    
+    font-size: 60px;
+    margin-left: 5%;
+    margin-top: 5%;
     color: #000000;
 }
-
 a {
     text-decoration: none;
 }
-
-#join{
+#box{
     position: absolute;
-    width: 150.86px;
-    height: 34.43px;
-    left: 299px;
-    top: 180.04px;
-
-    font-family: Roboto;
-    font-style: normal;
+    right: 49%;
+    top: 60%;
     font-weight: bold;
-    font-size: 35px;
-    line-height: 41px;
-    text-align: center;
-
-    color: #EF880F;
-
+    font-size: 60px;
     transform: rotate(-15deg);
 }
-
+#join {
+    color: #EF880F;
+}
 #login {
-    position: absolute;
-    width: 120.32px;
-    height: 34.43px;
-    left: 174px;
-    top: 218.14px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 35px;
-    line-height: 41px;
-    text-align: center;
-
     color: #D688C0;
-
-    transform: rotate(-15deg);
 }
