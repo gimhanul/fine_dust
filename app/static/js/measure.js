@@ -74,6 +74,7 @@ const changeURL = (state, data) => {
         $(".good").css("background-image", "src('../static/image/normal.png')")
         $(".good").attr({ "src": "../static/image/normal.png", "class": "good" })
         $("p").css({ "color": "#6CB86B" })
+        $("#logout").css({ "color": "#6CB86B" })
         $("p#dust").css({ "background-color": "rgba(255,255,255,0.4)" })
         $(".last").html("애매하네....")
     }
@@ -84,6 +85,7 @@ const changeURL = (state, data) => {
         $("#dust").html(data)
         $(".good").attr({ "src": "../static/image/bad.png", "class": "good" })
         $("p").css({ "color": "#D0BC0A" })
+        $("#logout").css({ "color": "#D0BC0A" })
         $("p#dust").css({ "background-color": "rgba(255,255,255,0.4)" })
         $(".last").html("마스크 여매고 댕겨라,,,끌끌,,,")
     }
@@ -94,6 +96,7 @@ const changeURL = (state, data) => {
         $("#dust").html(data)
         $(".good").attr({ "src": "../static/image/sobad.png", "class": "good" })
         $("p").css({ "color": "#B86B6B" })
+        $("#logout").css({ "color": "#B86B6B" })
         $("p#dust").css({ "background-color": "rgba(255,255,255,0.4)" })
         $(".last").html("당장 공기청정기 켜!!...")
     }

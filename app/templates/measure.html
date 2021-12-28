@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>빠인더스트</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/measure.css') }}">
+    <link rel="stylesheet" href="../static/css/measure.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/measure.js') }}"></script>
 </head>
 <body>
-    <span id="name">{{ name }}</span>
+    <a id="logout" href="/logout">logout</a>
     <a href="{{ url_for('main.chart') }}"><img class="good" src="{{ url_for('static', filename='image/good.png') }}"></a>
     <p class="first">{{ grade }}학년 {{ ban }}반의</p>
     <p class="second">미세먼지 농도</p>
